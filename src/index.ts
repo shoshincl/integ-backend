@@ -7,5 +7,3 @@ if (require.main === module) {
     console.log(`API URL http://localhost:${process.env.APP_PORT}`)
   );
 }
-
-module.exports.app = app;

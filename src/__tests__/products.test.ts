@@ -21,7 +21,7 @@ describe('GET /products', () => {
     request(app)
       .get('/products')
       .set('Accept', 'application/json')
-      .query({ search: 'abba' })
+      .query({ search: 'saas' })
       .expect('Content-Type', /json/)
       .expect(201)
       .then((res: any) => expect(res.body.products.length).toBeGreaterThan(1))

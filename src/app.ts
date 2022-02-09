@@ -1,4 +1,6 @@
 import cors from 'cors';
+import './db';
+
 const express = require('express');
 const { router } = require('./routes');
 
