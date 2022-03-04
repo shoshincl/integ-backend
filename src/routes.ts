@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-import { ProductModel } from './db';
+import { ProductModel, UserModel } from './db';
 
 router.get('/products', async (req, res) => {
   const { search } = req.query;
@@ -21,6 +21,15 @@ router.get('/products', async (req, res) => {
   res.status(201).json({
     products,
   });
+});
+
+router.get('/users', async (req, res) => {
+  const { id } = req.query;
+  let user = null;
+  if (id) {
+    user = await UserModel.find({ id });
+  }
+  res.status(201).json({ id });
 });
 
 module.exports.router = router;

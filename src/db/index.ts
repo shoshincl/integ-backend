@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { SchemaTypes } from 'mongoose';
 
 mongoose.Promise = global.Promise;
 
@@ -27,4 +27,11 @@ const ProductModelSchema = new Schema({
   price: Number,
 });
 
+const UserModelSchema = new Schema({
+  id: Number,
+  name: String,
+  age: Number,
+});
+
 export const ProductModel = mongoose.model('ProductModel', ProductModelSchema);
+export const UserModel = mongoose.model('UserModel', UserModelSchema);

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: integ-backend
+    container_name: integ-backend
+    command: npm run watch:dev
+    ports:
+      - 4000:4000
+    environment:
+      PORT: 4000
+    volumes:
+      - .:/src/
+      - nodemodules:/src/node_modules
+
+volumes:
+  nodemodules: {}
